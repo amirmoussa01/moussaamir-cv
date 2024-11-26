@@ -15,7 +15,7 @@ img{
     text-align: center;
 }
 .ddd{
-    border: solid 1px lightblue;
+    border: solid 2px lightblue;
     border-radius: 12px;
     background-color: white;
     /*margin-left: 10%;
@@ -24,9 +24,9 @@ img{
 }
 .eee{
     text-align: center;
-    background-color: lightblue;
-    border-radius: 20px;
-    color: white;
+    background-color: white;
+    border-radius: 20px lightblue;
+    color: lightblue;
     /*padding-left: 5px;
     padding-right: 5px;*/
 
