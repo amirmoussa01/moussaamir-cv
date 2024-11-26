@@ -28,13 +28,14 @@ img{
     background-color: lightblue;
     border-radius: 100px;
     color: white;
-    padding-left: 5px;
-    padding-right: 5px;
+    /*padding-left: 5px;
+    padding-right: 5px;*/
 
 }
 td{
     width: 100%;
-    padding-top:5px;
+    padding-top:10px;
+    padding-bottoom:10px;
     
 }
 table{
