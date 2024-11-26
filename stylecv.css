@@ -1,7 +1,7 @@
 
 .aaa{
     border-top: solid 100px lightblue;
-    width:min-content;
+    width:fit-content;
 }
 img{
     border-radius: 50%;
@@ -19,9 +19,9 @@ img{
     border: solid 1px lightgray;
     border-radius: 12px;
     background-color: lightgray;
-    margin-left: 10%;
+    /*margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 10%;*/
 }
 .eee{
     text-align: center;
@@ -34,7 +34,7 @@ img{
 }
 td{
     width: 50%;
-    padding: 0px 100px 100px 100px;
+    padding: 0px 50px 50px 50px;
     
 }
 table{
