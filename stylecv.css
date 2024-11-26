@@ -1,6 +1,7 @@
 
 .aaa{
     border-top: solid 100px lightblue;
+    width:fit-content;
 }
 img{
     border-radius: 50%;
