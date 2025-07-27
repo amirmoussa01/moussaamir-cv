@@ -1,102 +1,310 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir CV</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css" integrity="sha512-EJp8vMVhYl7tBFE2rgNGb//drnr1+6XKMvTyamMS34YwOEFohhWkGq13tPWnK0FbjSS6D8YoA3n3bZmb3KiUYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="stylecv.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOUSSA Amir - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #007B8A;
+      --secondary: #00C2CB;
+      --bg-light: #f4f4f9;
+      --bg-dark: #1e1e2f;
+      --text-light: #333;
+      --text-dark: #eaeaea;
+      --radius: 16px;
+    }* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  line-height: 1.6;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 4rem 1rem 3rem;
+  text-align: center;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-bottom: 1rem;
+}
+
+.toggle-theme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  color: var(--primary);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1001;
+}
+
+nav {
+  background-color: white;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--secondary);
+}
+
+.burger {
+  display: none;
+
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger span {
+  height: 3px;
+  width: 20px;
+  background: var(--primary);
+  margin: 2px 0;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.active {
+
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+section {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background: #f0faff;
+}
+
+body.dark .card {
+  background: #2a2a3d;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: white;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+input, textarea {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+
+}
+
+button {
+  padding: 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--secondary);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #eee;
+
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+  </style>
 </head>
 <body>
-    
-    <section>
-        <div class="aaa">
-            <fieldset class="bbb">
-                <legend class="ccc"><img src="Amir.jpg" alt="photo"></legend>
-                    <center>
-                        <h1>MOUSSA Amir</h1>
-                    </center>    
-                    <table>
-                        <tr class="fff">
-                            <td><p><a><i class="fa fa-envelope"></i>  moussaamir979@gmail.com</p>
-                                <p><a><i class="fa fa-phone"></i>  +229 46157929</p>
-                                <p><a><i class="fa fa-map-marker"></i>  Cotonou/Benin</p>
-                                <p><a><i class="fa fa-map-site"></i> <a href="">Site web personnel</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <fieldset class="ddd">
-                                    <legend class="eee"><h2>Objectif Professionnel</h2></legend>
-                                    <p class="ggg">
-                                        Développeur passionné et innovant,je vise refouler les contraintes de la technologie en combinant mon expertise en mathématique et informatique.Mon objectif est de concevoir des solutions technologiques avancées qui répondent aux défis complexes de notre ère numérique. Je vise à contribuer à des projets d'envergure en matière de logiciel, tout en continuant à développer mes compétences en matière dans les domaines telles que L'Intelligence Artificielle. 
-                                    </p>
-                                </fieldset>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <fieldset class="ddd">
-                                    <legend class="eee"><h2>Compétences</h2></legend>
-                                    <p class="ggg">
-                                        <h3>C & C++ & Visual basic</h3>
-                                        <h3>Développement web(html,css) & Php & JavaScript</h3>
-                                        <h3>Base de données(SQL) & Analyse de données</h3>
-                                        <h3>Algorithmes et structures de données</h3>
-                                        
-                                    </p>
-                                </fieldset>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <fieldset class="ddd">
-                                    <legend class="eee"><h2>Parcours Académique</h2></legend>
-                                    <p class="ggg">
-                                        <a>ISSPT-Calavi</a> <br>
-                                        Licence en Système informatique et logiciel <br>
-                                        <em>En cours</em><br>
-                                        <p class="ggg">
-                                            <a>CEG Gbégamey-Cotonou</a> <br>
-                                            Baccalauréat série C (Sciences) <br>
-                                            <em>Obtenu en 2023</em></p>
-                                    </p>
-                                </fieldset>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <fieldset class="ddd">
-                                    <legend class="eee"><h2>Compétences Linguistiques</h2></legend>
-                                    <p class="ggg">
-                                        <a>Hausa </a>(Langue maternelle) <br><br>
-                                        <a>Francais </a>(courant) <br><br>
-                                        <a>Arabe </a>(courant) <br><br>
-                                        <a>Anglais </a>(courant)
-                                    </p>
-                                </fieldset>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <fieldset class="ddd">
-                                    <legend class="eee"><h2>Projets innovants</h2></legend>
-                                    <p class="ggg">
-                                        <a>BiblioAcadémie</a> <br><br>
-                                        BiblioAcadémie vise à développer un système de gestion de bibliothèque complet et efficace pour automatiser et optimiser les opérations courantes d'une bibliothèque. Ce système permet de gérer les livres, les membres, les emprunts, les retours, et les amendes, tout en offrant des fonctionnalités avancées de recherche et de rapport
-                                       
-                                    </p>
-                                </fieldset>
-                            </td>
-                        </tr>
-                    </table>
-            </fieldset>
-        </div>
-        
-    </section>
+  <header>
+    <button class="toggle-theme" onclick="toggleTheme()">Mode sombre</button>
+    <img src="profile.jpg" alt="Photo de profil" class="profile-img" />
+    <h1>MOUSSA Amir</h1>
+    <p>Développeur Full Stack passionné par les solutions web et mobile innovantes</p>
+  </header>  <nav>
+    <div class="burger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">À propos</a>
+      <a href="#skills">Compétences</a>
+      <a href="#projects">Projets</a>
+      <a href="#testimonials">Témoignages</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>  <section id="about">
 
-</body>
+    <h2>À propos de moi</h2>
+    <p> Développeur passionné et innovant,je vise refouler les contraintes de la
+ technologie en combinant mon expertise en mathématique et
+ informatique.Mon objectif est de concevoir des solutions technologiques
+ avancées qui répondent aux défis complexes de notre ère numérique. Je vise à
+ contribuer à des projets d'envergure en matière de logiciel, tout en continuant
+ à développer mes compétences en matière dans les domaines telles que
+ L'Intelligence Artificielle. Je m'intéresse à Laravel, Node.js, React et à la conception de systèmes évolutifs, des produits utiles et performants.</p>
+    <p><a href="Amir CV.pdf" download>Télécharger mon CV</a></p>
+  </section>  <section id="skills">
+    <h2>Compétences techniques</h2>
+    <div class="cards">
+      <div class="card">PHP / Laravel</div>
+      <div class="card">MySQL / SQL</div>
+      <div class="card">Node.js / Express</div>
+      <div class="card">React / JavaScript</div>
+      <div class="card">Flutter / Dart</div>
+      <div class="card">API REST / Auth</div>
+      <div class="card">Git / GitHub</div>
+    </div>
+
+  </section>  <section id="projects">
+    <h2>Mes projets récents</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Plateforme PharmaOnline</h3>
+        <p>Application Node.js et React avec gestion des utilisateurs, commandes, paiements et interface d'administration destinée à la vente de produits pharmaceutiques de manière fluide et rapide avec aussi un systeme de messagerie integré pour la bonne marche du système dans le domaine de la pharmacie .</p>
+      </div>
+      <div class="card">
+        <h3>Plateforme e-commerce</h3>
+        <p>Application Laravel avec gestion des utilisateurs, commandes, paiements et interface d'administration.</p>
+      </div>
+      <div class="card">
+        <h3>API bibliothèque scolaire</h3>
+        <p>API REST Laravel avec authentication Sanctum, gestion d'emprunts, rôles, sanctions.</p>
+      </div>
+      <div class="card">
+        <h3>App gestion de contacts</h3>
+        <p>CRUD backend Node.js avec frontend natif, sauvegarde dans fichier JSON, totalement modulaire.</p>
+      </div>
+
+    </div>
+  </section>  <section id="testimonials">
+    <h2>Témoignages</h2>
+    <div class="cards">
+      <div class="card">
+        <p>"MOUSSA est un développeur talentueux, sérieux et efficace. Il comprend vite et agit avec précision."</p>
+        <p><strong>– Prof. Kouassi</strong></p>
+      </div>
+      <div class="card">
+        <p>"J'ai travaillé avec lui sur un projet Node.js, son code est propre et bien documenté."</p>
+        <p><strong>– Collaborateur anonyme</strong></p>
+      </div>
+    </div>
+  </section>  <section id="contact">
+    <h2>Me contacter</h2>
+
+    <form action="https://formspree.io/f/xkgzrdgw" method="POST">
+      <input type="text" name="nom" placeholder="Nom complet" required />
+      <input type="email" name="email" placeholder="Adresse email" required />
+      <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>  
+  <footer>
+    &copy; 2025 MOUSSA Amir | Portfolio développé avec passion | Tous droits réservés
+  </footer>  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+      const btn = document.querySelector('.toggle-theme');
+
+      btn.textContent = document.body.classList.contains("dark") ? "Mode clair" : "Mode sombre";
+    }
+  </script></body>
 </html>
