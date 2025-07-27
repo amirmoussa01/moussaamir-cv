@@ -306,5 +306,15 @@ footer {
 
       btn.textContent = document.body.classList.contains("dark") ? "Mode clair" : "Mode sombre";
     }
-  </script></body>
+    
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+  }
+  </script>
+</body>
 </html>
